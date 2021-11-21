@@ -31,6 +31,33 @@ public class LinkedList {
     	
     }
     
+    
+    public void insertInBetween(int place, int data) {
+    	int count=countElementInLinkedList() ;
+		
+    	if(place < 1 || count==0) {
+			System.out.println("List is empty/Invalid position to add element");
+			return;
+		}
+		
+		if(place == 1) {
+			addFirstElement(data);
+		}
+		else {
+			Node node = new Node(data);
+			Node tempHead=head;
+			
+			while(count < place) {
+				tempHead = tempHead.getNext();
+				count++;
+			}
+			
+			Node current = tempHead.getNext();
+			tempHead.setNext(node);
+			node.setNext(current);
+		}
+	}
+    
     public void display()  
     {  
         Node start = head;  
@@ -40,5 +67,16 @@ public class LinkedList {
         	start = start.getNext();  
         }  
     
+    }
+    
+    public int countElementInLinkedList()  
+    {  
+    	int count=0;
+        Node start = head;  
+        while (start != null)  
+        {  start = start.getNext();
+           count=count+1;
+        }
+        return count;  
     }
 }
