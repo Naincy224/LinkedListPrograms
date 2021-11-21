@@ -16,6 +16,10 @@ public class LinkedList {
 
     }
     
+    public void deleteFirstElement() {
+    	head= head.getNext();
+    }
+    
     
     public void appendElement(int data) {
     	

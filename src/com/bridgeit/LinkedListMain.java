@@ -11,6 +11,8 @@ class LinkedListMain {
 			list.display();
 			list.insertInBetween(2, 30);
 			list.display();
+			list.deleteFirstElement();
+			list.display();
 	}
 
 }
