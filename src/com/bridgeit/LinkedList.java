@@ -9,7 +9,15 @@ public class LinkedList {
     }
     
    
-    public void addElement(int data) {
+    public void addFirstElement(int data) {
+    		 Node newNode = new Node(data);
+    		 currentHead = newNode;
+    		 head=newNode;
+
+    }
+    
+    
+    public void appendElement(int data) {
     	
     	if(!isEmpty()) {
     		Node newNode = new Node(data);
@@ -17,9 +25,8 @@ public class LinkedList {
     		currentHead = newNode;
     	}
     	else {
-    		 Node newNode = new Node(data);
-    		 currentHead = newNode;
-    		 head=newNode;
+    		System.out.println("The list is empty, please add first the element to the list using addFirstElement(int data) method");
+
     	}
     	
     }
