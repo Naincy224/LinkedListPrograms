@@ -16,6 +16,43 @@ public class LinkedList {
 
     }
     
+    public void deleteFirstElement() {
+    	int count=countElementInLinkedList() ;
+    	if(count==0) {
+    		System.out.println("List is empty");
+    	}
+    	else if(count==1){
+    		head=null;
+    	}
+    	else {
+    		head= head.getNext();
+    	}
+    	
+    }
+    
+    public void deleteLastElement() {
+    	int count=countElementInLinkedList() ;
+    	if(count==0) {
+    		System.out.println("List is empty");
+    	}
+    	else if(count==1){
+    		head=null;
+    	}
+    	else {
+    		 Node tempHead=head;
+    		 int x=1;
+    	        while (x < count)  
+    	        {  
+    	        	head = head.getNext();  
+    	        	x++;
+    	        }
+    	        head.setNext(null);
+    	        head=tempHead;
+    	}
+    	
+
+    }
+    
     
     public void appendElement(int data) {
     	
